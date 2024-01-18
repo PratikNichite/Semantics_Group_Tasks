@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <style>
+        body {
+            background-color: #202124; /* Dark background color */
+            color: #ffffff; /* Light text color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #logo {
+            height: 100%;
+            max-height: 2.1rem; /* Adjust the max-height as needed */
+        }
+
+        h1 {
+            margin: 0; /* Remove default margin */
+            text-align: center; /* Center the text horizontally */
+            flex-grow: 1;
+        }
+
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+            background-color: #424242; /* Dark input background color */
+            color: #ffffff; /* Light text color */
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #424242; /* Dark input background color */
+            color: #ffffff; /* Light text color */
+        }
+
+        label {
+            margin-top: 10px;
+            color: #ffffff; /* Light text color */
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #00897b; /* Teal button color */
+            color: #ffffff; /* Light text color */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Darker teal on hover */
+        }
+
+        #outputContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #outputText {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+            background-color: #424242; /* Dark input background color */
+            color: #ffffff; /* Light text color */
+        }
+
+        #loadingScreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #loadingText {
+            color: #ffffff;
+        }
+
+        #copyButton {
+            background-color: #673ab7; /* Purple-ish color for the copy button */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <img id="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <h1>Text Summarizer</h1>
+        </nav>
+
+        <form id="summarizeForm" action="/" method="post">
+            <textarea id="inputText" name="text" placeholder="Enter your text here..." rows="15" required>{{input_text}}</textarea>
+            <div>
+                <div>
+                    <label for="minOutputLength">Set desired output length:</label>
+                    <input type="range" id="minOutputLength" name="min_output_length" min="1" max="1000" value="{{min_l}}" required>
+                    <output for="minOutputLength" id="min_range_label">{{min_l}}</output>
+                </div>
+                
+            </div>
+            
+            <button type="submit">Summarize</button>
+        </form>
+        <div id="outputContainer">
+            <textarea id="outputText" placeholder="Summarized text will appear here..." rows="10" readonly>{{summary}}</textarea>
+            <button id="copyButton" onclick="copyText()">Copy Text</button>
+        </div>
+
+        <div id="loadingScreen">
+            <p id="loadingText">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("summarizeForm")
+
+        const rangeBtn = document.getElementById("minOutputLength")
+
+        rangeBtn.addEventListener("change",(e)=>{
+            document.getElementById("min_range_label").innerHTML = e.target.value;
+        })
+
+        form.addEventListener("submit",(e)=>{
+            if(document.getElementById("inputText").value.trim().length > 0){
+                document.getElementById('loadingScreen').style.display = 'flex';
+            }
+        })
+
+        function hideLoading() {
+            document.getElementById('loadingScreen').style.display = 'none';
+        }
+
+        function copyText() {
+            var outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+            alert('Text copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
