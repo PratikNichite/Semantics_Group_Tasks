@@ -31,7 +31,7 @@ def index():
 
             return render_template('summerize.html', summary=output, input_text=data, min_l=output_length)
         except:
-             return render_template('summerize.html', min_l=output_length, input_text=data)
+             return render_template('summerize.html', min_l=output_length, input_text=data, summary=output)
         
     else:
         return render_template('summerize.html', min_l=output_length)
