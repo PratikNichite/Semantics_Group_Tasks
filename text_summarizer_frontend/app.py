@@ -4,7 +4,8 @@ from transformers import pipeline
 app = Flask(__name__)
 
 # pipe = pipeline('summarization', model="t5-base")
-pipe = pipeline('summarization', model="./bart_trained_model") # importing local trained model
+# pipe = pipeline('summarization', model="./bart_trained_model") # importing local trained model
+pipe = pipeline("summarization", model="pratiknichite/TrainedTextSummerizerBART") #our trained model
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
