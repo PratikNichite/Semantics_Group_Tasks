@@ -1,4 +1,6 @@
 # **Text Summarizer**
+Text and dialogue summarization using the Facebook BART Large CNN model provides a robust method for condensing extensive text and conversations into concise, coherent summaries. The BART model, a transformer encoder-decoder developed by Facebook, is fine-tuned on the CNN news dataset, making it adept at generating one-sentence summaries. 
+
 
 ## Frontend Installation:
 1. Download the 'text_summarizer_frontend' folder
