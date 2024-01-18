@@ -29,12 +29,12 @@ def index():
 
             output = result[0]["summary_text"]
 
-            return render_template('summerize.html', summary=output, input_text=data, min_l=output_length)
+            return render_template('summarize.html', summary=output, input_text=data, min_l=output_length)
         except:
-             return render_template('summerize.html', min_l=output_length, input_text=data, summary=output)
+             return render_template('summarize.html', min_l=output_length, input_text=data, summary=output)
         
     else:
-        return render_template('summerize.html', min_l=output_length)
+        return render_template('summarize.html', min_l=output_length)
 
 if __name__ == '__main__':
     app.run(debug=True)
