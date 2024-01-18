@@ -1,11 +1,19 @@
 from flask import Flask, render_template, request
-from transformers import pipeline
+from dotenv import load_dotenv
+import requests
+import os
+
+load_dotenv()
+
+API_URL = "https://api-inference.huggingface.co/models/pratiknichite/TrainedTextSummerizerBART"
+headers = {"Authorization": "Bearer " + os.environ["API_KEY"]}
+
+def query(payload):
+	response = requests.post(API_URL, headers=headers, json=payload)
+	return response.json()
+
 
 app = Flask(__name__)
-
-# pipe = pipeline('summarization', model="t5-base")
-# pipe = pipeline('summarization', model="./bart_trained_model") # importing local trained model
-pipe = pipeline("summarization", model="pratiknichite/TrainedTextSummerizerBART") #our trained model
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -15,10 +23,16 @@ def index():
         data = request.form["text"]
         output_length = int(request.form["min_output_length"])
 
-        processed_text = pipe(data, min_length=output_length)[0]['summary_text']
-        # processed_text = pipe(data)[0]['summary_text']
+        #change query input
+        try:
+            result = query({"inputs": data, "parameters": {"min_length": output_length}})
 
-        return render_template('summerize.html', summary=processed_text, input_text=data, min_l=output_length)
+            output = result[0]["summary_text"]
+
+            return render_template('summerize.html', summary=output, input_text=data, min_l=output_length)
+        except:
+             return render_template('summerize.html', min_l=output_length, input_text=data)
+        
     else:
         return render_template('summerize.html', min_l=output_length)
 

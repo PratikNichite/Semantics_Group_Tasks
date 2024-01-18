@@ -1,2 +1,4 @@
-text_summarizer_frontend/bart_trained_model
+text_summarizer_frontend/dummy.py
 .DS_Store
+.env
+.gitignore
