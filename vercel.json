@@ -11,9 +11,5 @@
           "src": "/(.*)",
           "dest": "text_summarizer_frontend/app.py"
         }
-      ],
-      "env": {
-        "FLASK_ENV": "production",
-        "FLASK_APP": "text_summarizer_frontend/app.py"
-      }
+      ]
 }
