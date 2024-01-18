@@ -1,7 +1,8 @@
 # **Text Summarizer**
- - In text and dialogue summarization, the Facebook BART Large CNN model is a valuable tool for simplifying lengthy text and conversations.
- - This model, developed by Facebook, has been fine-tuned on the CNN news dataset, making it particularly effective at creating summaries.
- - By leveraging the Hugging Face Transformers library and its pipeline API, developers can easily access and use this model for text summarization tasks. 
+ - In text summarization, the Facebook BART Large CNN model is a valuable tool for simplifying lengthy text.
+ - This model, developed by Facebook, has been fine-tuned on the CNN news dataset, making it particularly effective at summarization.
+ - By leveraging the Hugging Face Transformers library and its pipeline API, developers can easily access and use this model for text summarization tasks.
+ - We train the model on 'samsum' dataset from Hugging Face for dialogue summariation.
 
 ## Frontend Installation:
 1. Download the 'text_summarizer_frontend' folder
