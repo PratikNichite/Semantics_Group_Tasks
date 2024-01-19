@@ -9,7 +9,7 @@ API_URL = "https://api-inference.huggingface.co/models/pratiknichite/TrainedText
 headers = {"Authorization": "Bearer " + os.environ["API_KEY"]}
 
 def query(payload):
-	response = requests.post(API_URL, headers=headers, json=payload)
+	response = requests.post(API_URL, headers=headers, json=payload, timeout = 300)
 	return response.json()
 
 
