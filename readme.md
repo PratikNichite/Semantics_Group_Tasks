@@ -14,11 +14,11 @@
 
 
 - Markovity_Project `(Tweets Generation)`
-  └ inspirational_tweet_generation.ipynb `(main markovify code)`
+  └ inspirational_tweet_generation.ipynb `(main notebook file)`
 
 
 - Movie_Genre_Prediction_Project
-  └ movie_genre_prediction.ipynb `(Main movie classification code)`
+  └ movie_genre_prediction.ipynb `(main notebook file)`
 
 
 - Final_Project `(Text & Dialogue Summarizer)`
