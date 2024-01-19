@@ -17,8 +17,8 @@
   └ inspirational_tweet_generation.ipynb `(main markovify code)`
 
 
-- Movie_Classification_Project
-  └ movie_classification.ipynb `(Main movie classification code)`
+- Movie_Genre_Prediction_Project
+  └ movie_genre_prediction.ipynb `(Main movie classification code)`
 
 
 - Final_Project `(Text & Dialogue Summarizer)`
