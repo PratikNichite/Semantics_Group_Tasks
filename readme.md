@@ -13,7 +13,7 @@
 
 - Presentations
   ├ BPE-Dropout(paper-1).pptx
-  └ Paper_Presentation_2.pptx
+  └ Transformer(paper-2).pptx
 
 
 - Markovity_Project `(Tweets Generation)`
@@ -24,7 +24,7 @@
   └ movie_genre_prediction.ipynb `(main notebook file)`
 
 
-- Final_Project `(Text & Dialogue Summarizer)`
+- Capstone_Project `(Text & Dialogue Summarizer)`
   ├ dialogue_summarizer_frontend `(frontend code)`
   ├ project_code.ipynb `(main notebook file)`
   └ Readme.md `(info on final project)`
