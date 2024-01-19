@@ -22,7 +22,7 @@
 
 
 - Final_Project `(Text & Dialogue Summarizer)`
-  ├ text_summarizer_frontend `(frontend code)`
+  ├ dialogue_summarizer_frontend `(frontend code)`
   ├ project_code.ipynb `(main notebook file)`
   └ Readme.md `(info on final project)`
 
