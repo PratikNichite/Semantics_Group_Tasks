@@ -26,6 +26,7 @@
 
 
 - Capstone_Project `(Text & Dialogue Summarizer)`
+  ├ capstone_project_video.mp4
   ├ dialogue_summarizer_frontend `(frontend code)`
   ├ project_code.ipynb `(main notebook file)`
   └ Readme.md `(info on final project)`
