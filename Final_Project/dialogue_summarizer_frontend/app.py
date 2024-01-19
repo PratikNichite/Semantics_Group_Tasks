@@ -8,10 +8,14 @@ load_dotenv()
 API_URL = "https://api-inference.huggingface.co/models/pratiknichite/TrainedTextSummerizerBART"
 headers = {"Authorization": "Bearer " + os.environ["API_KEY"]}
 
-def query(payload):
-	response = requests.post(API_URL, headers=headers, json=payload, timeout = 300)
-	return response.json()
 
+def query(payload):
+    try:
+        response = request.post(API_URL, headers=headers, json=payload, timeout = 300)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        return e
 
 app = Flask(__name__)
 
@@ -24,15 +28,11 @@ def index():
         output_length = int(request.form["min_output_length"])
 
         #change query input
-        try:
-            result = query({"inputs": data, "parameters": {"min_length": output_length}})
+        result = query({"inputs": data, "parameters": {"min_length": output_length}})
 
-            output = result[0]["summary_text"]
+        output = result[0]["summary_text"]
 
-            return render_template('summarize.html', summary=output, input_text=data, min_l=output_length)
-        except:
-             return render_template('summarize.html', min_l=output_length, input_text=data, summary=output)
-        
+        return render_template('summarize.html', summary=output, input_text=data, min_l=output_length)
     else:
         return render_template('summarize.html', min_l=output_length)
 
