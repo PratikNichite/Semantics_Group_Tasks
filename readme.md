@@ -9,7 +9,7 @@
 - Readme.md `(info on group & file structure)`
 
 - Presentations
-  ├ Paper_Presentation_1.pptx
+  ├ BPE-Dropout(paper-1).pptx
   └ Paper_Presentation_2.pptx
 
 
