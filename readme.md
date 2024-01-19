@@ -1,6 +1,22 @@
-# 📝 **Text Summarizer**
- - In text summarization, the Facebook BART Large CNN model is a valuable tool for simplifying lengthy text.
- - This model, developed by Facebook, has been fine-tuned on the CNN news dataset, making it particularly effective at summarization.
-  - We trained the Facebook BART model further on `SAMSum` dataset from Hugging Face for dialogue summariation.
- - This model is then uploaded on Hugging Face platform and being used through the API, in this project.
- - The deployed version can be viewed at https://text-summarizer-pratik-nichite.vercel.app.
+# Group Members:
+1. Pranav Kumar Sah
+2. Pratik Nichite
+3. Abdul Basit Raja
+
+# File Structure:
+- Readme.md **(info on group & file structure)**
+
+- Presentations
+    - Paper_Presentation_1.pptx
+    - Paper_Presentation_2.pptx
+
+- Markovity_Project **(Tweets Generation)**
+    - tweets_generation.ipynb **(main markovify code)**
+
+- Movie_Classification_Project
+    - movie_classification.ipynb **(Main movie classification code)**
+
+- Final_Project **(Text & Dialogue Summarizer)**
+    - text_summarizer_frontend **(frontend code)**
+    - project_code.ipynb **(main notebook file)**
+    - Readme.md **(info on final project)**
