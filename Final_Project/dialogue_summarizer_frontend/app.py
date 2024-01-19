@@ -11,11 +11,13 @@ headers = {"Authorization": "Bearer " + os.environ["API_KEY"]}
 
 def query(payload):
     try:
-        response = request.post(API_URL, headers=headers, json=payload, timeout = 300)
+        response = requests.post(API_URL, headers=headers, json=payload, timeout = 300)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
-        return e
+        return [{"summary_text": e}]
+    except Exception as e:
+        return [{"summary_text": e}]
 
 app = Flask(__name__)
 
