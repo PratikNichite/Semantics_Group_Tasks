@@ -15,9 +15,9 @@ def query(payload):
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
-        return [{"summary_text": e}]
+        return [{"summary_text": "Server error or loading model"}]
     except Exception as e:
-        return [{"summary_text": e}]
+        return [{"summary_text": "Server error or loading model"}]
 
 app = Flask(__name__)
 
