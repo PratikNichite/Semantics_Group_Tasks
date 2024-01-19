@@ -24,6 +24,7 @@
             justify-content: left;
             align-items: center;
             padding: 20px;
+            margin-top: 30px;
         }
 
         #logo {
@@ -142,6 +143,7 @@
         </nav>
 
         <form id="summarizeForm" action="/" method="post">
+            <p><b>Note:</b> if the website crashes after you click on summarize button, it is probably because the model is loading. Please try again after 1 minute.</p>
             <textarea id="inputText" name="text" placeholder="Enter your text here..." rows="15" required>{{input_text}}</textarea>
             <div>
                 <div>
