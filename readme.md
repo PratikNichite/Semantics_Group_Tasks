@@ -1,14 +1,14 @@
-# Group Members:
+# 👤Group Members:
 1. Pranav Kumar Sah
 2. Pratik Nichite
 3. Abdul Basit Raja
 
 ---
-# Contributions
+# 🛠️Contributions
 - Each member of the group has equally contributed to each part of the work including project, ppts etc.
 
 ---
-# File Structure:
+# 📁File Structure:
 ```
 - Readme.md `(info on group & file structure)`
 
