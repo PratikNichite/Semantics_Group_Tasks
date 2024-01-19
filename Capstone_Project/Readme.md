@@ -3,4 +3,4 @@
  - We trained the Facebook BART model further on `SAMSum` dataset from Hugging Face🤗.
  - Our model is used for dialogue and paragraph summariation.
  - This model is then uploaded on Hugging Face platform ( [link](https://huggingface.co/pratiknichite/TrainedTextSummerizerBART) ) and being used through the API, in this project.
- - The deployed version can be viewed at https://dialogue-summarizer-pratik-nichite.vercel.app/.
+ - The deployed version can be viewed at https://dialogue-summarizer-pratik-nichite.vercel.app.
