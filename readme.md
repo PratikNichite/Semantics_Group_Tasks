@@ -5,6 +5,7 @@
 
 ---
 # File Structure:
+```
 - Readme.md `(info on group & file structure)`
 
 - Presentations:
@@ -18,7 +19,7 @@
 
 - Movie_Classification_Project:
     - └ movie_classification.ipynb `(Main movie classification code)`
-
+```
 
 - Final_Project: `(Text & Dialogue Summarizer)`
     - ├ text_summarizer_frontend `(frontend code)`
