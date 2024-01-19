@@ -14,7 +14,7 @@
 
 
 - Markovity_Project `(Tweets Generation)`
-  └ tweets_generation.ipynb `(main markovify code)`
+  └ inspirational_tweet_generation.ipynb `(main markovify code)`
 
 
 - Movie_Classification_Project
